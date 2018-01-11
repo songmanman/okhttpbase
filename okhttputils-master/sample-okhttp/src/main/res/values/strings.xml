@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">Sample-okHttp</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="refreshing_waiting">refreshing waiting</string>
 </resources>

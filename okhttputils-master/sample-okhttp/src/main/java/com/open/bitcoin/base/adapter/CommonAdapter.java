@@ -59,4 +59,9 @@ public abstract class CommonAdapter<T>  extends BaseAdapter{
     public abstract ViewHolder createHolder(int position, ViewGroup parent);
 
     public abstract void bindData(int position, ViewHolder holder, T data);
+
+
+    public Context getContext() {
+        return mContext;
+    }
 }

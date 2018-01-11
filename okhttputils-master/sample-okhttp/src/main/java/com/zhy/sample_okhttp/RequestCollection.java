@@ -1,23 +1,17 @@
-package com.open.bitcoin.base;
+package com.zhy.sample_okhttp;
 
 /**
  * ****************************************************************************************************************************************************************************
- *
- * @author :Administrator
- * @createTime: 2018/1/5
+ *  接口请求地址
+ * @author :fgj
+ * @createTime: 2018/1/10.
  * @version:1.0.0
  * @modifyTime:
  * @modifyAuthor:
  * @description: ****************************************************************************************************************************************************************************
  */
 
-public class MessageHandler {
-
-    /** 刷新 */
-    public static final int MESSAGE_HANDLER = 1000;
-    /** 请求数据成功 */
-    public static final int REFRESH_COMPLETE3 = 1001;
-    /** 默认位置 */
-    public static final int MESSAGE_DEFAULT_POSITION = 2000;
-
+public class RequestCollection {
+    /***向中国地区用户购买比特币***/
+    public static final String GETADSELLBYCONDITION ="http://47.97.109.220:8080/ad/getAdSellByCondition.do";
 }

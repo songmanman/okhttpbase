@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.open.bitcoin.utils.ScreenUtils;
 import com.zhy.sample_okhttp.R;
 
 /**
@@ -55,7 +56,7 @@ public class CommonTitleBarActivity extends BaseActivity implements View.OnClick
         }
 
         if(isExtendsCommonTitleBarActivity){
-            setContentView(com.zhy.http.okhttp.R.layout.activity_common_titlebar);
+            setContentView(R.layout.activity_common_titlebar);
             txt_left = (TextView) findViewById(R.id.txt_left);
             txt_title = (TextView) findViewById(R.id.txt_title);
             txt_right = (TextView) findViewById(R.id.txt_right);
@@ -101,13 +102,13 @@ public class CommonTitleBarActivity extends BaseActivity implements View.OnClick
             FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
             lp.gravity = Gravity.TOP | Gravity.LEFT;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && layout_titlebar != null && isFlagTranslucentStatus) {
-                int statusBarHeight =36;// ScreenUtils.getStatusBarHeight(this);
-                int layoutHeight = (statusBarHeight > 0 ? statusBarHeight : 36) + 45;//(int) ScreenUtils.getIntToDip(45);
+                int statusBarHeight = ScreenUtils.getStatusHeight(this);
+                int layoutHeight = (statusBarHeight > 0 ? statusBarHeight : 36) + (int) ScreenUtils.getIntToDip(45,this);
                 layout_titlebar.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, layoutHeight));
                 layout_titlebar.setPadding(0, statusBarHeight, 0, 0);
                 lp.topMargin = layoutHeight;
             } else {
-                lp.topMargin = 45;//(int) ScreenUtils.getIntToDip(45);
+                lp.topMargin =  (int) ScreenUtils.getIntToDip(45,this);
             }
             addContentView(commonContentBg, lp);
             init();
